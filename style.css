@@ -524,6 +524,7 @@ footer { border-top: 1px solid rgba(255,255,255,.06); }
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
+  .hero { justify-content: center; padding: 100px 24px 40px; }
   .sec, .contact-sec { padding: 60px 20px; }
   .expg, .stats-row, .cgrid, .soc-links { gap: 8px; }
   .ec   { width: calc(50% - 4px); }
@@ -531,4 +532,13 @@ footer { border-top: 1px solid rgba(255,255,255,.06); }
   .tcard, .ccard { width: 100%; max-width: 100%; }
   .foot-top { flex-direction: column; gap: 24px; padding: 32px 20px 24px; }
   .foot-bot { padding: 12px 20px; }
+}
+
+/* DISABLED / DEAD LINKS */
+.fdead {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--grey);
+  cursor: default;
+  opacity: .5;
 }
