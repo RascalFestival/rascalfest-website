@@ -3,38 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
 <title>Terms of Use — Rascal Festival</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
-:root{--black:#060606;--green:#AAFF00;--white:#F4EFE8;--grey:#7A7570;--r:16px}
+<style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;min-height:100vh}
-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:12px}
-.nlogo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--white);text-decoration:none}
-.lt{display:flex;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);overflow:hidden}
-.lb{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:8px 18px;background:transparent;color:var(--grey);border:none;cursor:pointer;transition:all .2s}
-.lb.on{background:var(--green);color:var(--black)}
+body{background:#060606!important;color:#F4EFE8!important;font-family:'DM Sans',sans-serif;min-height:100vh}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:12px;background:#060606}
+.nlogo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:#F4EFE8;text-decoration:none}
+.lt{display:flex;border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}
+.lb{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:8px 18px;background:transparent;color:#7A7570;border:none;cursor:pointer;transition:all .2s}
+.lb.on{background:#AAFF00;color:#060606}
 .wrap{max-width:760px;margin:0 auto;padding:64px 40px 100px}
-.lbl{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.lbl::before{content:'';width:16px;height:1px;background:var(--green);display:inline-block}
-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:.94;margin-bottom:12px}
-.dt{font-size:11px;font-weight:300;color:var(--grey);margin-bottom:52px;font-family:'Syne',sans-serif;letter-spacing:.1em}
-.dt span{color:var(--green)}
-h2{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:40px 0 12px;padding-bottom:10px;border-bottom:1px solid rgba(170,255,0,.14)}
+.lbl{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#AAFF00;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.lbl::before{content:'';width:16px;height:1px;background:#AAFF00;display:inline-block}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:.94;margin-bottom:12px;color:#F4EFE8}
+.dt{font-size:11px;font-weight:300;color:#7A7570;margin-bottom:52px;font-family:'Syne',sans-serif;letter-spacing:.1em}
+.dt span{color:#AAFF00}
+h2{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#AAFF00;margin:40px 0 12px;padding-bottom:10px;border-bottom:1px solid rgba(170,255,0,.14)}
 p{font-size:14px;font-weight:300;line-height:1.85;color:rgba(244,239,232,.68);margin-bottom:12px}
 ul{margin:0 0 12px 20px;display:flex;flex-direction:column;gap:7px}
 li{font-size:14px;font-weight:300;line-height:1.75;color:rgba(244,239,232,.68)}
-a{color:var(--green);text-decoration:none}
+a{color:#AAFF00;text-decoration:none}
 a:hover{text-decoration:underline}
-strong{color:var(--white);font-weight:600}
-.box{background:rgba(170,255,0,.05);border:1px solid rgba(170,255,0,.14);border-radius:var(--r);padding:20px 24px;margin:0 0 24px}
+strong{color:#F4EFE8;font-weight:600}
+.box{background:rgba(170,255,0,.05);border:1px solid rgba(170,255,0,.14);border-radius:16px;padding:20px 24px;margin:0 0 24px}
 .box p{margin:0;color:rgba(244,239,232,.82)}
 .sec{display:none}
 .sec.on{display:block}
-footer{border-top:1px solid rgba(255,255,255,.06);padding:22px 40px;text-align:center}
-footer p{font-size:11px;color:var(--grey);font-weight:300}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:22px 40px;text-align:center;background:#060606}
+footer p{font-size:11px;color:#7A7570;font-weight:300}
 @media(max-width:600px){nav,footer{padding:18px 20px}.wrap{padding:40px 20px 80px}}
 </style>
 </head>
@@ -58,7 +60,7 @@ footer p{font-size:11px;color:var(--grey);font-weight:300}
   <p>This website is owned and operated by <strong>Πολιτιστικός και Περιβαλλοντικός Σύλλογος Πλατανόδασος</strong>, based in Arta, Greece. It provides information about Rascal Festival including lineup announcements, ticket information, and sponsorship opportunities.</p>
 
   <h2>2. Tickets</h2>
-  <p>Tickets for Rascal Festival are sold through our official ticketing partner <strong>go-out.co</strong> By purchasing a ticket through their platform you agree to their terms and conditions. Rascal Festival is not responsible for the ticketing process, refund policies, or any issues arising from third-party ticket purchases.</p>
+  <p>Tickets for Rascal Festival are sold through our official ticketing partner <strong>More.com</strong>. By purchasing a ticket through their platform you agree to their terms and conditions. Rascal Festival is not responsible for the ticketing process, refund policies, or any issues arising from third-party ticket purchases.</p>
 
   <h2>3. Event Photography and Video</h2>
   <p>By attending Rascal Festival you acknowledge that:</p>
@@ -102,7 +104,7 @@ footer p{font-size:11px;color:var(--grey);font-weight:300}
   <p>Η ιστοσελίδα ανήκει στον <strong>Πολιτιστικό και Περιβαλλοντικό Σύλλογο Πλατανόδασος</strong>, με έδρα την Άρτα, Ελλάδα. Παρέχει πληροφορίες για το Rascal Festival, συμπεριλαμβανομένων ανακοινώσεων lineup, εισιτηρίων και ευκαιριών χορηγίας.</p>
 
   <h2>2. Εισιτήρια</h2>
-  <p>Τα εισιτήρια πωλούνται μέσω της επίσημης πλατφόρμας <strong>go-out.co</strong> Με την αγορά εισιτηρίου αποδέχεστε τους δικούς τους όρους. Το Rascal Festival δεν φέρει ευθύνη για επιστροφές ή ζητήματα που προκύπτουν από αγορές μέσω τρίτων.</p>
+  <p>Τα εισιτήρια πωλούνται μέσω της επίσημης πλατφόρμας <strong>More.com</strong>. Με την αγορά εισιτηρίου αποδέχεστε τους δικούς τους όρους. Το Rascal Festival δεν φέρει ευθύνη για επιστροφές ή ζητήματα που προκύπτουν από αγορές μέσω τρίτων.</p>
 
   <h2>3. Φωτογραφία και Βίντεο</h2>
   <p>Με τη συμμετοχή σας στο Rascal Festival αναγνωρίζετε ότι:</p>
@@ -137,11 +139,11 @@ footer p{font-size:11px;color:var(--grey);font-weight:300}
 
 <footer><p>&#169; 2026 Rascal Festival. All rights reserved.</p></footer>
 <script>
-function setLang(lang) {
-  document.getElementById('sen').className = 'sec' + (lang === 'en' ? ' on' : '');
-  document.getElementById('sgr').className = 'sec' + (lang === 'gr' ? ' on' : '');
-  document.getElementById('ben').className = 'lb' + (lang === 'en' ? ' on' : '');
-  document.getElementById('bgr').className = 'lb' + (lang === 'gr' ? ' on' : '');
+function setLang(l){
+  document.getElementById('sen').className='sec'+(l==='en'?' on':'');
+  document.getElementById('sgr').className='sec'+(l==='gr'?' on':'');
+  document.getElementById('ben').className='lb'+(l==='en'?' on':'');
+  document.getElementById('bgr').className='lb'+(l==='gr'?' on':'');
 }
 </script>
 </body>
