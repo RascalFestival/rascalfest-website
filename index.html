@@ -184,7 +184,7 @@
           <div class="ml-form-embedWrapper embedForm">
             <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
               <div class="ml-form-embedContent" style="display:none"></div>
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2209978/forms/182542098773312715/subscribe" data-code="" method="post" target="_blank">
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2209978/forms/182542098773312715/subscribe" data-code="" method="post" onsubmit="return validateML(this)">
                 <div class="ml-form-formContent">
                   <div class="ml-form-fieldRow">
                     <div class="ml-field-group ml-field-name">
@@ -257,7 +257,18 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+  <script>
+function validateML(form){
+  var n=form.querySelector("input[name=\"fields[name]\"]");
+  var e=form.querySelector("input[name=\"fields[email]\"]");
+  var ok=true;
+  [n,e].forEach(function(el){if(!el)return;if(!el.value.trim()){el.style.borderColor="rgba(255,80,80,.7)";ok=false;}else{el.style.borderColor="";}});
+  if(!ok)return false;
+  if(e&&e.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim())){e.style.borderColor="rgba(255,80,80,.7)";e.value="";return false;}
+  return true;
+}
+</script>
+<script src="main.js"></script>
   <script>
     function ml_webform_success_38785087() {
       var $ = ml_jQuery || jQuery;
