@@ -199,7 +199,7 @@
                 </div>
                 <input type="hidden" name="ml-submit" value="1">
                 <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Subscribe</button>
+                  <button type="submit" class="primary" id="ml-submit-btn" disabled style="opacity:.4;cursor:not-allowed">Subscribe</button>
                   <button disabled="disabled" style="display:none" type="button" class="loading">
                     <div class="ml-form-embedSubmitLoad"></div>
                     <span class="sr-only">Loading...</span>
@@ -258,17 +258,23 @@
   </footer>
 
   <script>
-function validateML(form){
-  var n=form.querySelector("input[name=\"fields[name]\"]");
-  var e=form.querySelector("input[name=\"fields[email]\"]");
-  var ok=true;
-  [n,e].forEach(function(el){if(!el)return;if(!el.value.trim()){el.style.borderColor="rgba(255,80,80,.7)";ok=false;}else{el.style.borderColor="";}});
-  if(!ok)return false;
-  if(e&&e.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim())){e.style.borderColor="rgba(255,80,80,.7)";e.value="";return false;}
-  return true;
-}
-</script>
-<script src="main.js"></script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn   = document.getElementById('ml-submit-btn');
+    var name  = document.querySelector('input[name="fields[name]"]');
+    var email = document.querySelector('input[name="fields[email]"]');
+    if (!btn || !name || !email) return;
+    function check() {
+      var nameOk  = name.value.trim().length > 0;
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      btn.disabled = !(nameOk && emailOk);
+      btn.style.opacity  = (nameOk && emailOk) ? '1' : '0.4';
+      btn.style.cursor   = (nameOk && emailOk) ? 'pointer' : 'not-allowed';
+    }
+    name.addEventListener('input', check);
+    email.addEventListener('input', check);
+  });
+  </script>
+  <script src="main.js"></script>
   <script>
     function ml_webform_success_38785087() {
       var $ = ml_jQuery || jQuery;
