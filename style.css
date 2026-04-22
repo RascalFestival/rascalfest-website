@@ -84,6 +84,14 @@ nav.s {
   display: inline-block; transition: opacity .25s; border-radius: 16px;
 }
 .btn-g:hover { opacity: .85; }
+.btn-ghost {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 16px 44px; background: transparent; color: #AAFF00;
+  border: 2px solid #AAFF00; cursor: pointer;
+  display: inline-block; transition: all .25s; border-radius: 16px;
+}
+.btn-ghost:hover { background: rgba(170,255,0,.1); }
 .btn-o {
   font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
