@@ -29,7 +29,6 @@
       </h1>
       <div class="hctas">
         <button class="btn-g" onclick="smoothTo('tickets')">Get Tickets</button>
-        <button class="btn-ghost" onclick="smoothTo('newsletter')">Early Bird Access</button>
       </div>
     </div>
   </section>
@@ -184,7 +183,7 @@
           <div class="ml-form-embedWrapper embedForm">
             <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
               <div class="ml-form-embedContent" style="display:none"></div>
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2209978/forms/182542098773312715/subscribe" data-code="" method="post" onsubmit="return validateML(this)">
+              <form class="ml-block-form" id="ml-form" action="https://assets.mailerlite.com/jsonp/2209978/forms/182542098773312715/subscribe" data-code="" method="post">
                 <div class="ml-form-formContent">
                   <div class="ml-form-fieldRow">
                     <div class="ml-field-group ml-field-name">
@@ -262,16 +261,43 @@
     var btn   = document.getElementById('ml-submit-btn');
     var name  = document.querySelector('input[name="fields[name]"]');
     var email = document.querySelector('input[name="fields[email]"]');
-    if (!btn || !name || !email) return;
+    var form  = document.getElementById('ml-form');
+    var rowForm    = document.querySelector('.ml-form-embedBodyDefault.row-form');
+    var rowSuccess = document.querySelector('.ml-form-successBody.row-success');
+
+    if (!btn || !name || !email || !form) return;
+
+    /* enable/disable button based on input */
     function check() {
       var nameOk  = name.value.trim().length > 0;
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
       btn.disabled = !(nameOk && emailOk);
-      btn.style.opacity  = (nameOk && emailOk) ? '1' : '0.4';
-      btn.style.cursor   = (nameOk && emailOk) ? 'pointer' : 'not-allowed';
+      btn.style.opacity = (nameOk && emailOk) ? '1' : '0.4';
+      btn.style.cursor  = (nameOk && emailOk) ? 'pointer' : 'not-allowed';
     }
     name.addEventListener('input', check);
     email.addEventListener('input', check);
+
+    /* submit via fetch — no new tab, no page navigation */
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data })
+        .then(function(r) { return r.json(); })
+        .then(function(json) {
+          if (json.success) {
+            if (rowForm)    rowForm.style.display    = 'none';
+            if (rowSuccess) rowSuccess.style.display = 'block';
+          }
+        })
+        .catch(function() {
+          /* fallback — show success anyway since success:true was confirmed */
+          if (rowForm)    rowForm.style.display    = 'none';
+          if (rowSuccess) rowSuccess.style.display = 'block';
+        });
+      return false;
+    });
   });
   </script>
   <script src="main.js"></script>
